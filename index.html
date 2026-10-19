@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101110">
+  <title>NOIRÉ | Luxury Fragrance &amp; Self-Care</title>
+  <meta name="description" content="A considered collection of premium fragrance, skincare, and self-care essentials.">
+
+  <!-- Favicons (files live in /images) -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Google Fonts: Playfair Display / Manrope / DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 (must load BEFORE style.css) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- NOIRÉ styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="noire" id="top-wrap">
+
+    <!-- Announcement bar -->
+    <div class="announcement">
+      <span>Complimentary shipping on orders above ₹2,999</span>
+      <span class="announcement-note">A considered collection for considered living</span>
+    </div>
+
+    <!-- Navigation -->
+    <header class="site-nav fixed-top">
+      <a href="#top" class="wordmark">
+        <img class="wordmark-logo" src="images/noire-logo.png" alt="" width="52" height="41">
+        <div class="wordmark-text">NOIRÉ<span>Objects of desire</span></div>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#collection">Collections</a>
+        <a href="#story">Our Story</a>
+        <a href="#journal">Journal</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" aria-label="Search"><i data-lucide="search" width="17" height="17"></i></button>
+        <button type="button" aria-label="Wishlist" class="count-button" id="wishlistBtn"><i data-lucide="heart" width="17" height="17"></i><b id="wishCount">0</b></button>
+        <button type="button" aria-label="Shopping bag" class="count-button" id="cartBtn"><i data-lucide="shopping-bag" width="17" height="17"></i><b id="cartCount">0</b></button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+          <i data-lucide="menu" class="icon-menu" width="20" height="20"></i>
+          <i data-lucide="x" class="icon-close" width="20" height="20"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <p class="eyebrow">No. 01 / The new ritual</p>
+        <h1>Less,<br><em>but exceptional.</em></h1>
+        <p class="hero-copy">Considered objects.<br>Extraordinary everyday rituals.</p>
+        <div class="hero-ctas">
+          <a class="button button-gold" href="#collection">Discover the collection <i data-lucide="arrow-up-right" width="15" height="15"></i></a>
+          <a class="story-link" href="#story">Explore the story <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-caption"><span>Obsidian / Eau de Parfum</span><span>01 — 08</span></div>
+      <div class="scroll-mark"><span>Scroll to explore</span><i></i></div>
+    </section>
+
+    <!-- 01 Story -->
+    <section id="story" class="story section">
+      <div class="story-media reveal">
+        <img src="images/noire-philosophy-ritual.png" alt="Serum and moisturizer beside a warm skincare ritual">
+        <span class="image-label">A study in restraint</span>
+      </div>
+      <div class="story-copy reveal">
+        <p class="eyebrow">01 — Our philosophy</p>
+        <h2>The art of<br><em>choosing well.</em></h2>
+        <p>Not more things. Better things. A considered collection of pieces chosen for their character, craftsmanship, and lasting place in everyday life.</p>
+        <a class="text-link" href="#values">Read our point of view <i data-lucide="arrow-up-right" width="15" height="15"></i></a>
+      </div>
+    </section>
+
+    <!-- 02 Collection (cards are rendered by js/main.js) -->
+    <section id="collection" class="collection section">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">02 — The edit</p>
+          <h2>The considered<br><em>collection.</em></h2>
+        </div>
+        <p>Fragrance, skincare, and self-care.<br>Considered essentials for everyday rituals.</p>
+      </div>
+
+      <div class="toolbar reveal">
+        <div class="filters" id="filters"></div>
+        <label class="sort">Sort by
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+          <i data-lucide="chevron-down" width="14" height="14"></i>
+        </label>
+      </div>
+
+      <div class="row product-grid" id="productGrid"></div>
+    </section>
+
+    <!-- Campaign -->
+    <section class="campaign">
+      <div class="campaign-image"></div>
+      <div class="campaign-content reveal">
+        <p class="eyebrow">A quiet kind of luxury</p>
+        <h2>An object.<br>A feeling.<br><em>A memory.</em></h2>
+        <a class="button button-outline" href="#collection">Shop the edit <i data-lucide="arrow-up-right" width="15" height="15"></i></a>
+      </div>
+    </section>
+
+    <!-- 03 Values -->
+    <section id="values" class="values section">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">03 — The details</p>
+          <h2>Beautifully<br><em>deliberate.</em></h2>
+        </div>
+        <p>Because the things around us<br>shape the way we feel.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value reveal"><span>01</span><i data-lucide="sparkles" width="18" height="18"></i><h3>Thoughtfully curated.</h3><p>A small, edited world of pieces with presence, purpose and a little poetry.</p></div>
+        <div class="value reveal"><span>02</span><i data-lucide="sparkles" width="18" height="18"></i><h3>Made to be kept.</h3><p>Objects that earn their place through daily use, quiet joy and lasting character.</p></div>
+        <div class="value reveal"><span>03</span><i data-lucide="sparkles" width="18" height="18"></i><h3>The beauty of less.</h3><p>A reminder that a life of meaning rarely needs more than what matters.</p></div>
+      </div>
+    </section>
+
+    <!-- 04 Testimonials -->
+    <section id="journal" class="testimonials section">
+      <div class="testimonial-kicker">
+        <p class="eyebrow">04 — Notes from the community</p>
+        <h2>Words that<br><em>stay.</em></h2>
+      </div>
+      <div class="quote-grid">
+        <figure class="quote reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>“The kind of fragrance that becomes part of your presence. Subtle, warm, and completely unforgettable.”</blockquote>
+          <figcaption>— Meera Kapoor <span>Sample testimonial</span></figcaption>
+        </figure>
+        <figure class="quote quote-featured reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Everything feels intentional. The packaging, the weight of the bottle, the way it lives on my shelf.”</blockquote>
+          <figcaption>— Aarav Shah <span>Sample testimonial</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Noiré has a rare point of view. I found one beautiful thing, and then came back for another.”</blockquote>
+          <figcaption>— Isha Menon <span>Sample testimonial</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 05 Newsletter -->
+    <section class="newsletter section reveal">
+      <div>
+        <p class="eyebrow">05 — Stay a little longer</p>
+        <h2>A note from <em>noiré.</em></h2>
+        <p>New collections, considered objects, and occasional inspiration. Nothing more.</p>
+      </div>
+      <form id="newsletterForm">
+        <label for="email">Your email address</label>
+        <div class="email-row">
+          <input id="email" type="email" placeholder="name@email.com" autocomplete="email">
+          <button type="submit" aria-label="Subscribe"><i data-lucide="arrow-up-right" width="18" height="18"></i></button>
+        </div>
+        <small id="newsletterMsg" aria-live="polite"></small>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-main">
+        <div>
+          <a href="#top" class="wordmark">
+            <img class="wordmark-logo" src="images/noire-logo.png" alt="" width="52" height="41">
+            <div class="wordmark-text">NOIRÉ<span>Objects of desire</span></div>
+          </a>
+          <p>Considered fragrance, skincare, and<br>self-care for everyday rituals.</p>
+        </div>
+        <div class="footer-col"><span>Explore</span><a href="#collection">The collection</a><a href="#story">Our story</a><a href="#journal">Journal</a></div>
+        <div class="footer-col"><span>Connect</span><a href="mailto:hello@noire.example">Email us</a><a href="#footer">Instagram</a><a href="#footer">Pinterest</a></div>
+        <div class="footer-col"><span>Visit</span><p>Mon–Fri, 10–6<br>Mumbai, India</p><a href="mailto:hello@noire.example">hello@noire.example</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 NOIRÉ. A fictional studio.</span>
+        <span>Crafted with intention <span class="gold">✦</span></span>
+        <a href="#top" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cart drawer (Bootstrap Offcanvas) -->
+  <div class="offcanvas offcanvas-end cart-drawer" tabindex="-1" id="cartDrawer" aria-labelledby="cartTitle">
+    <div class="cart-drawer-inner">
+      <div class="drawer-head">
+        <div>
+          <p class="eyebrow">Your selection</p>
+          <h2 id="cartTitle">The bag <span>(<span id="drawerCount">0</span>)</span></h2>
+        </div>
+        <button type="button" data-bs-dismiss="offcanvas" aria-label="Close cart"><i data-lucide="x" width="20" height="20"></i></button>
+      </div>
+      <div id="cartContent"></div>
+    </div>
+  </div>
+
+  <!-- Quick view (Bootstrap Modal) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="qvName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content quick-modal">
+        <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"><i data-lucide="x" width="19" height="19"></i></button>
+        <img id="qvImage" src="" alt="">
+        <div>
+          <p class="eyebrow" id="qvCategory"></p>
+          <h2 id="qvName"></h2>
+          <strong id="qvPrice"></strong>
+          <p id="qvDesc"></p>
+          <button type="button" class="button button-gold" id="qvAdd">Add to bag <i data-lucide="arrow-up-right" width="15" height="15"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+          integrity="sha384-hJnF5AwidE18GSWTAGHv3ByzzvfNZ1Tcx5y1UUV3WkauuMCEzBJBMSwSt/PUPXnM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
